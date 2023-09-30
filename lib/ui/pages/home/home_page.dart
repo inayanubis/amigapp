@@ -17,13 +17,14 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Amiga Dashboard'),
+        backgroundColor: Colors.green,
+        title: const Text('Amiga Dashboard'), //es poden ficar iconos, widgets, el que vulguis (Icon(Icons."el nom del widget"))
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: StreamBuilder<bool>(
               stream: amigaRepository.getPowerStatus(),
-              builder: (context, value) => IconButton.filled(
+              builder: (context, value) => IconButton.filled(  //IconButton te una propietat que es isSelected, que es un boolean, i si es true, el boto es queda apretat
                 iconSize: 32,
                 onPressed: () => amigaRepository.switchPower(),
                 icon: const Icon(Icons.power_settings_new),

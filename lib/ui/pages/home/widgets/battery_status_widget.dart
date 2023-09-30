@@ -23,6 +23,7 @@ class BatteryStatusWidget extends StatelessWidget {
                 value: snapshot.data,
                 strokeWidth: 10,
                 strokeCap: StrokeCap.round,
+                color: snapshot.data! > 0.98 ? null : Colors.red, //com que es un Feature, has de posar el ! perque assegurar-te de que existeix
               );
             },
           ),

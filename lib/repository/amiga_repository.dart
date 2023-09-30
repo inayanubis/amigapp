@@ -10,7 +10,7 @@ class AmigaRepository {
 
   Stream<bool> getPowerStatus() async* {
     while (true) {
-      yield _isPowerOn;
+      yield _isPowerOn; //yield es com el return però per a streams, retorna el valor i continua amb el codi
       await Future.delayed(const Duration(seconds: 2));
     }
   }
